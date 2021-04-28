@@ -1,0 +1,274 @@
+body { /*Убирает отступ по краям экрана*/
+    margin: 0 0 0 0;
+    height: 1000px;
+    /* background: rgb(71,65,176);
+    background: linear-gradient(90deg, rgba(71,65,176,1) 0%, rgba(255,255,255,1) 50%, rgba(79,86,159,1) 100%); */
+}
+.up-menu {  /*Верхнее меню*/
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    background-color: rgb(142, 49, 230);
+    font-family: 'Open Sans', arial;
+    z-index: 1;
+    display: flex;  
+    align-items: center;
+}
+.down-menu {
+    position: fixed;
+    border-bottom-left-radius: 35px;
+    border-top-left-radius: 35px;
+    top: 90px;
+    width: 93%;
+    height: 45px;
+    background: rgb(154, 24, 240);
+    margin-left: auto;
+    display: flex;
+    transition: 1s all ease;
+    right: -90%;
+    z-index: 2;
+}
+.down-menu-active {
+    transition: 0.7s all ease;
+    right: 0%;
+}
+.down-menu > button { /*стилизайия кнопок в верхнем меню навигации*/
+    border-radius: 35px;
+    height: 45px;
+    width: auto;
+    font-size: 125%;
+    border: none;
+    background-color: rgb(132, 24, 233);
+    color: white;
+    font-family: 'Open Sans', arial;
+}
+#news {
+    margin-left: 35px;
+}
+.down-menu > .arrow > i {
+    color: white;
+    position: absolute;
+}
+.arrow {
+    width: 30px;
+    height: 45px;
+    border-radius: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    line-height: 1.25;
+}
+.down-menu > button:focus {
+    outline: none;
+}
+.down-menu > button:hover {
+    background-color: rgb(255, 154, 71);
+    transition: 0.4s;
+    border-radius: 10px;
+    box-shadow: inset 1px 1px 10px -1px
+}
+#main { /*Стилизация кноки "Главная"*/
+    border-radius: 35px;
+    height: 60px;
+    width: auto;
+    font-size: 125%;
+    border: none;
+    background-color: rgb(132, 24, 233);
+    color: white;
+    font-family: 'Open Sans', arial;
+}
+#main:focus {
+    outline: none;
+}
+#main:hover {
+    background-color: rgb(255, 154, 71);
+    transition: 0.4s;
+    border-radius: 50px;
+    box-shadow: inset 1px 1px 10px -1px
+}
+.right-btn { /*Стилизация кнопок в верхнем меню навигации с правой стороны*/
+    position: absolute;
+    top: 0;
+    right: 10px;
+}
+.right-btn > button {
+    height: 60px;
+    width: auto;
+    font-size: 125%;
+    border-radius: 0px;
+    border: none;
+    background-color: rgb(132, 24, 233);
+    color: white;
+    font-family: 'Open Sans', arial;
+}
+.right-btn > button:focus {
+    outline: none;
+}
+.right-btn > button:hover {
+    background-color: rgb(255, 154, 71);
+    transition: 0.4s;
+    border-radius: 10px;
+    box-shadow: inset 1px 1px 10px -1px;
+}
+.sign-form { /*Стилизация выдвижного окошка при нажатии на кнопку "Войти"*/
+    visibility: hidden;
+    position: fixed;
+    display: flex;
+    background-color: rgb(255, 154, 71);
+    width: 221px;
+    height: 150px;
+    top: -150px;
+    transition: 1s all ease;
+    right: 0;
+    z-index: 0;
+    border-radius: 5px;
+}
+.sign-form-active {
+    visibility: visible;
+    transition: 1s all ease;
+    top: 55px;
+}
+.sign-form > form > input {
+    margin-top: 20px;
+    width: 150px;
+    height: 15px;
+    margin-left: 30.25px;
+    border: none;
+    border-bottom: 1px solid rgb(132, 24, 233);
+    background: none;
+}
+.sign-form > form > input:focus {
+    outline: none;
+}
+.sign-form-btn {
+    margin-top: 25px;
+    margin-left: 10px;
+    border: none;
+    background-color: rgb(132, 24, 233);
+    color: white;
+}
+.sign-form-btn:hover {
+    background-color: rgb(255, 154, 71);
+    box-shadow: inset 1px 1px 10px -1px;
+    transition: 0.4s;
+    border-radius: 10px;
+    color: black;
+}
+.sign-form-btn:focus {
+    outline: none;
+}
+.sign-form-forgot-password {
+    padding-left: 30px;
+    text-decoration: none;
+    color: slateblue;
+}
+.settings-form {
+    visibility: hidden;
+    position: fixed;
+    display: flex;
+    width: 100px;
+    height: 75px;
+    background-color: rgb(255, 154, 71);
+    transition: 1s all ease;
+    right: 225px;
+    z-index: 0;
+    border-radius: 5px;
+    top: -30px;
+}
+.settings-form-active {
+    visibility: visible;
+    transition: 1s all ease;
+    top: 60px;
+}
+.sign-form-active.out {
+    transform: translateY(-500px);
+}
+#string {
+    display: none;
+}
+#string-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 30px;
+    font-size: 36px;
+    text-align: center;
+    line-height: 45px;
+    transition: transform 0.7s;
+    color: white;
+    margin-left: -4px;
+}
+#string:checked + label {
+    transform: rotate(-180deg);
+}
+.main-container {
+    width: 100%;
+    max-width: 60%;
+    min-width: 30%;
+    height: 1500px;
+    background-color: white;
+    z-index: 0;
+    position: absolute;
+    margin-top: 8%;
+    left:50%;
+    margin-left:-30%;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+}
+.theme-selector{
+    height: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+
+
+input[type=text] {
+    width: 130px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+/* When the input field gets focus, change its width to 100% */
+input[type=text]:focus {
+    width: 80%;
+}
+.switch{
+    transition: 0.5s all ease;
+    width: 30px;
+    height: 15px;
+    background-color: rgb(219, 219, 219);
+    border-radius: 35px;
+    margin-left: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+}
+.switch-circle{
+    transition: 0.5s all ease;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%; 
+    background-color: white;
+    margin-left: 3px;
+    margin-right: 3px;
+    z-index: 33;
+    cursor: pointer;
+}
+.active{
+    transition: 0.5s ;
+    justify-content: flex-end;
+    background-color: rgb(95, 95, 247);
+    cursor: pointer;
+}
